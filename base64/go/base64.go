@@ -89,14 +89,14 @@ func intToBits(i int32) []byte {
 	return []byte{a, b, c, d, e, f, g, h}
 }
 
-func Base64Encode(str string) string {
+func Base64Encode(str []byte) string {
 	bitWidth := 6
 
 	var bits []byte
 
 	// get all the bits that make up the string
 	for _, s := range str {
-		bits = append(bits, intToBits(s)...)
+		bits = append(bits, intToBits(int32(s))...)
 	}
 
 	if len(bits) == 0 {

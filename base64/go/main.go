@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	val := base64.Base64Encode("foobar")
+	val := base64.Base64Encode([]byte("foobar"))
 
 	fmt.Printf("encoded: %s\n", val)
 }

@@ -16,7 +16,7 @@ func TestBase64(t *testing.T) {
 	}
 
 	for test, result := range tests {
-		res := Base64Encode(test)
+		res := Base64Encode([]byte(test))
 
 		if result != res {
 			t.Error(result, res)
